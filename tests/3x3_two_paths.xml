@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map>
 	<cells>
-		<cell row="1" col= "1" />
-		<cell row="1" col= "3" />
-		<cell row="2" col= "1" />
-		<cell row="2" col= "2" />
-		<cell row="2" col= "3" />
-		<cell row="3" col= "1" />
-		<cell row="3" col= "2" />
+		<cell row="1" col= "A" />
+		<cell row="1" col= "C" />
+		<cell row="2" col= "A" />
+		<cell row="2" col= "B" />
+		<cell row="2" col= "C" />
+		<cell row="3" col= "A" />
+		<cell row="3" col= "B" />
 	</cells>
-	<start-point row="1" col= "1" />
-	<end-point row="3" col= "2" />
+	<start-point row="1" col= "A" />
+	<end-point row="3" col= "B" />
 </map>

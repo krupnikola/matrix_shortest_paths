@@ -7,16 +7,16 @@ class TestPath(unittest.TestCase):
     def test_one_path(self):
         map = 'tests/3x3_one_path.xml'
         self.assertEqual(PathFinder.get_shortest_paths(map)['paths'],
-                         [{'points': [{'row': 1, 'col': 1}, {'row': 2, 'col': 1}, {'row': 2, 'col': 2},
-                                      {'row': 2, 'col': 3}]}])
+                         [{'points': [{'row': 1, 'col': 'A'}, {'row': 2, 'col': 'A'}, {'row': 2, 'col': 'B'},
+                                      {'row': 2, 'col': 'C'}]}])
 
     def test_multiple_paths(self):
         map = 'tests/3x3_two_paths.xml'
         self.assertEqual(PathFinder.get_shortest_paths(map)['paths'],
-                         [{'points': [{'col': 1, 'row': 1}, {'col': 1, 'row': 2}, {'col': 1, 'row': 3},
-                                      {'col': 2, 'row': 3}]}, {
-                              'points': [{'col': 1, 'row': 1}, {'col': 1, 'row': 2}, {'col': 2, 'row': 2},
-                                         {'col': 2, 'row': 3}]}])
+                         [{'points': [{'col': 'A', 'row': 1}, {'col': 'A', 'row': 2}, {'col': 'A', 'row': 3},
+                                      {'col': 'B', 'row': 3}]}, {
+                              'points': [{'col': 'A', 'row': 1}, {'col': 'A', 'row': 2}, {'col': 'B', 'row': 2},
+                                         {'col': 'B', 'row': 3}]}])
 
     def test_no_paths(self):
         map = 'tests/3x3_no_paths.xml'

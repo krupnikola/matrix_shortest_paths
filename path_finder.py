@@ -15,35 +15,33 @@ class PathFinder:
 
             g = nx.Graph()
 
-            start_row = root.find('start-point').attrib['row']
+            start_row = int(root.find('start-point').attrib['row'])
             start_col = root.find('start-point').attrib['col']
-            end_row = root.find('end-point').attrib['row']
+            end_row = int(root.find('end-point').attrib['row'])
             end_col = root.find('end-point').attrib['col']
-
-            # turning letters into numbers
-            start_row = ord(start_row) - 64 if start_row.isalpha() else int(start_row)
-            start_col = ord(start_col) - 64 if start_col.isalpha() else int(start_col)
-            end_row = ord(end_row) - 64 if end_row.isalpha() else int(end_row)
-            end_col = ord(end_col) - 64 if end_col.isalpha() else int(end_col)
 
             start = (start_row, start_col)
             end = (end_row, end_col)
 
             for cell in root.iter('cell'):
-                row = cell.attrib['row']
+                row = int(cell.attrib['row'])
                 col = cell.attrib['col']
-
-                row = ord(row) - 64 if row.isalpha() else int(row)
-                col = ord(col) - 64 if col.isalpha() else int(col)
-
-                # adding rest of the cells to the graph
+                # add nodes to graph
                 g.add_node((row, col))
+
+            def increment_char(ch):
+                new = chr(ord(ch) + 1)
+                return new
+
+            def decrement_char(ch):
+                new = chr(ord(ch) - 1)
+                return new
 
             try:
 
                 for node in g.nodes:
-                    potential_neighbours = [(node[0] + 1, node[1]), (node[0], node[1] + 1), (node[0] - 1, node[1]),
-                                            (node[0], node[1] - 1)]
+                    potential_neighbours = [(node[0] + 1, node[1]), (node[0], increment_char(node[1])), (node[0] - 1, node[1]),
+                                            (node[0], decrement_char(node[1]))]
 
                     for pn in potential_neighbours:
                         if pn in g.nodes:

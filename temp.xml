@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bla>
+<map>
 	<cells>
-		<cell row="1" col= "1" />
-		<cell row="1" col= "3" />
-		<cell row="2" col= "1" />
-		<cell row="2" col= "2" />
-		<cell row="2" col= "3" />
-		<cell row="3" col= "1" />
-		<cell row="3" col= "2" />
-	</cells>
-	<start-point row="1" col= "1" />
-	<end-point row="3" col= "2" />
-</bla>
+		<cell row="1" col= "A" />
+		<cell row="1" col= "B" />
+		<cell row="1" col= "C" />
+		<cell row="1" col= "D" />
+		<cell row="2" col= "B" />
+		<cell row="3" col= "A" />
+		<cell row="3" col= "B" />
+		<cell row="3" col= "C" />
+		<cell row="3" col= "D" />		
+		<cell row="4" col= "A" />
+		<cell row="4" col= "C" />
+		<cell row="4" col= "D" />		
+	</cells>	
+	<start-point row="1" col= "C" />
+	<end-point row="4" col= "C" />
+</map>
